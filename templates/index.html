@@ -633,6 +633,8 @@
           <div class="card-heading"></div>
           <div class="card-body">
             <h2 class="title">Enter House Details</h2>
+            <!-- 6.  make functionality form in template -->
+            <!-- getting def predict function from app.py -->
             <form action="{{ url_for('predict')}}" method="POST">
               <div class="input-group">
                 <input class="input--style-1" type="text" placeholder="Enter Location" name="location">
@@ -717,7 +719,10 @@
                 <tr>
                   <th scope="row"></th>
                   <td>
+                    <!-- 7. predict_score was given from app.py into render -->
                     <h2>{{Predict_score}} </h2>
+                    <!-- 8. finally predicted score is outputed -->
+
                   </td>
 
                 </tr>

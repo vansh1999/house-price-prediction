@@ -13,6 +13,9 @@ model = pickle.load(
     open("model.pkl", 'rb'))
 index_dict = pickle.load(pkl_file)
 
+# 1. build model in jupyter notebook
+# 2. getting jupyter notebbok model here in flask app.py
+
 
 @app.route('/')
 def home():
@@ -32,6 +35,8 @@ def predict():
 
         new_vector = np.zeros(151)
 
+# 3. setting parameters - that will be used in template
+
         result_location = result['location']
 
         if result_location not in location_cat:
@@ -49,7 +54,9 @@ def predict():
     new = [new_vector]
 
     prediction = model.predict(new)
-    # print(prediction)
+
+    # 4. render to template the predict function and
+    # 5. storing Predict_score and will be used in template
 
     return render_template('index.html', Predict_score='Your house estimate price is  ₹ {} lakhs'.format(math.ceil(prediction)))
 
